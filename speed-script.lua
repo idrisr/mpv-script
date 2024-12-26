@@ -1,4 +1,12 @@
-mp.msg.info("Hello from mpv Lua script!")
+-- mp.msg.info("Hello from mpv Lua script!")
+
+mp.observe_property("fullscreen", "bool", function(name, value)
+	if value then
+		mp.msg.info("Entering fullscreen")
+	else
+		mp.msg.info("Exiting fullscreen")
+	end
+end)
 
 -- local speed_step = 0.1
 -- local current_speed = 1.0
